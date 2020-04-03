@@ -2,6 +2,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const axios = require('axios');
+const datafire = require('datafire');
 
 function inquireQuestions() {
     inquirer
@@ -36,14 +37,62 @@ function inquireQuestions() {
                 message: "Technology Used",
                 choices: ["Node.Js", "Express", "JavaScript", "jQuery", "React.js", "React", "GIT", "GitHub", "MongoDB", "MySQL", "Firebase", "Handlebars", "HTML", "CSS", "Bootstrap", "Media Queries", "APIs", "Microsoft Suite", "Heroku", "Command- Line"],
                 name: "technology"
-            }
+            },
+            {
+                type: "list",
+                message: "License",
+                choices: ["MIT", "BSD", "ISC", "Apache", "GPL"],
+                name: "license"
+            },
+            {
+                type: "input",
+                message: "What is your LinkedIn URL?",
+                name: "linkedin"
+            },
+            {
+                type: "input",
+                message: "What is your portfolio URL?",
+                name: "portfolio"
+            },
         ])
         .then(function (response) {
-            console.log(response);
+            // 
+            const usersInfo = `
+          # ${response.project}
+    
+          ## Description
+          ${response.description}
+    
+          ## Technology Stack
+          ${response.technology}
+    
+          ## Contributors
+          ${response.contributors}
+    
+          ## Contact
+          * #### Name: ${response.name}(@${response.username})
+          * #### Portfolio: ${response.portfolio}
+          * #### Email: []()
+          * #### LinkedIn: www.linkedin.com/in/${response.linkedin}
+    
+          ## License
+          ${response.license}
+        `
+      fs.writeFile("README.md", usersInfo, function(err) {
+        
+        if (err) {
+          return console.log(err);
+        }
+      
+        console.log("Success!");
+      
+      });
 
         });
     //end function
 }
+
+inquireQuestions();
 
 function githubAPICall() {
 
@@ -64,4 +113,4 @@ function githubAPICall() {
 
     //end function
 }
-githubAPICall();
+// githubAPICall();
