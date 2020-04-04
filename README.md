@@ -1,5 +1,5 @@
 
-    ![Github Badge](https://avatars0.githubusercontent.com/u/60204713?v=4)
+    <img src="https://avatars0.githubusercontent.com/u/60204713?v=4">
     
           # 
     
@@ -32,8 +32,5 @@
           MIT
 
           ## Tests
-          
-
-          ## Questions
           
         

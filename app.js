@@ -3,6 +3,7 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const axios = require('axios');
 const datafire = require('datafire');
+require('dotenv').config
 // let userName = ""
 
 function inquireQuestions() {
@@ -13,11 +14,11 @@ function inquireQuestions() {
                 message: "GitHub username",
                 name: "username"
             },
-            {
-                type: "password",
-                message: "GitHub password",
-                name: "password"
-            },
+            // {
+            //     type: "password",
+            //     message: "GitHub password",
+            //     name: "password"
+            // },
             {
                 type: "Input",
                 message: "Project Name",
@@ -91,7 +92,10 @@ function githubAPICall(userName, response) {
     const queryUrl = `https://api.github.com/users/` + userName;
 
     axios
-        .get(queryUrl)
+        .get(queryUrl,
+            {
+                headers: { "Authorization": `token ${process.env.GH_TOKEN}` }
+            })
         .then(function (res) {
             console.log(res.data);
 
@@ -108,7 +112,7 @@ function githubAPICall(userName, response) {
 
 function generateMD(response, res) {
     const usersInfo = `
-    <img src= "${res.data.avatar_url}">
+    <img src="${res.data.avatar_url}">
     
           # ${response.project}
     
