@@ -3,6 +3,7 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const axios = require('axios');
 const datafire = require('datafire');
+let userName = ""
 
 function inquireQuestions() {
     inquirer
@@ -56,7 +57,7 @@ function inquireQuestions() {
             },
         ])
         .then(function (response) {
-            // 
+            userName = response.username;
             const usersInfo = `
           # ${response.project}
     
@@ -78,26 +79,26 @@ function inquireQuestions() {
           ## License
           ${response.license}
         `
-      fs.writeFile("README.md", usersInfo, function(err) {
-        
-        if (err) {
-          return console.log(err);
-        }
-      
-        console.log("Success!");
-      
-      });
+            fs.writeFile("README.md", usersInfo, function (err) {
 
+                if (err) {
+                    return console.log(err);
+                }
+
+                console.log("Success!");
+
+            });
+            githubAPICall();
         });
-    //end function
+    
 }
 
 inquireQuestions();
 
 function githubAPICall() {
+    console.log(userName);
+    const queryUrl = `https://api.github.com/users/` + userName;
 
-    const queryUrl = `https://api.github.com/zen`;
-    // ${username}/repos?per_page=100
     axios
         .get(queryUrl)
         .then(function (res) {
@@ -113,4 +114,3 @@ function githubAPICall() {
 
     //end function
 }
-// githubAPICall();
