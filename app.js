@@ -83,10 +83,10 @@ function inquireQuestions() {
         ])
         .then(function (response) {
             let userName = response.username;
-            
+
             githubAPICall(userName, response);
         });
-    
+
 }
 
 inquireQuestions();
@@ -101,18 +101,20 @@ function githubAPICall(userName, response) {
             console.log(res.data);
 
 
-            generateMD(response);
+            generateMD(response, res);
         }).catch(function (err) {
 
             console.log(err);
-            
+
         });
 
     //end function
 }
 
-function generateMD(response){
+function generateMD(response, res) {
     const usersInfo = `
+    ![Github Badge](${res.data.avatar_url})
+    
           # ${response.project}
     
           ## Description
@@ -134,8 +136,9 @@ function generateMD(response){
           ${response.contributors}
     
           ## Contact
-          * #### Name: ${response.name}(@${response.username})
-          * #### Portfolio: ${response.portfolio}
+          * #### Name: ${res.data.name}
+          * #### Github [${response.username}](${res.data.html_url})
+          * #### Portfolio: [link to portfolio](${response.portfolio})
           * #### Email: []()
           * #### LinkedIn: www.linkedin.com/in/${response.linkedin}
     
@@ -148,13 +151,13 @@ function generateMD(response){
           ## Questions
           ${response.questions}
         `
-            fs.writeFile("README.md", usersInfo, function (err) {
+    fs.writeFile("README.md", usersInfo, function (err) {
 
-                if (err) {
-                    return console.log(err);
-                }
+        if (err) {
+            return console.log(err);
+        }
 
-                console.log("Success!");
+        console.log("Success!");
 
-            });
+    });
 }
