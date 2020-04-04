@@ -3,7 +3,7 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const axios = require('axios');
 const datafire = require('datafire');
-require('dotenv').config
+require('dotenv').config();
 // let userName = ""
 
 function inquireQuestions() {
