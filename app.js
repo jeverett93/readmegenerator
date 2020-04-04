@@ -100,7 +100,7 @@ function githubAPICall(userName, response) {
             console.log(res.data);
 
 
-            generateMD(response, res);
+            generateMD(res, response);
         }).catch(function (err) {
 
             console.log(err);
@@ -110,7 +110,7 @@ function githubAPICall(userName, response) {
     //end function
 }
 
-function generateMD(response, res) {
+function generateMD(res, response) {
     const usersInfo = `
     <img src="${res.data.avatar_url}">
     
@@ -120,7 +120,7 @@ function generateMD(response, res) {
           ${response.description}
 
           ## Table of Contents
-          ${response.table}
+          ${response.content}
 
           ## Installation
           ${response.installation}
