@@ -75,11 +75,6 @@ function inquireQuestions() {
                 message: "Tests?",
                 name: "tests"
             },
-            {
-                type: "input",
-                message: "Questions",
-                name: "questions"
-            },
         ])
         .then(function (response) {
             let userName = response.username;
@@ -113,7 +108,7 @@ function githubAPICall(userName, response) {
 
 function generateMD(response, res) {
     const usersInfo = `
-    ![Github Badge](${res.data.avatar_url})
+    <img src= "${res.data.avatar_url}">
     
           # ${response.project}
     
@@ -147,9 +142,6 @@ function generateMD(response, res) {
 
           ## Tests
           ${response.tests}
-
-          ## Questions
-          ${response.questions}
         `
     fs.writeFile("README.md", usersInfo, function (err) {
 
