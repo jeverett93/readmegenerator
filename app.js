@@ -3,7 +3,7 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const axios = require('axios');
 const datafire = require('datafire');
-let userName = ""
+// let userName = ""
 
 function inquireQuestions() {
     inquirer
@@ -25,13 +25,18 @@ function inquireQuestions() {
             },
             {
                 type: "input",
-                message: "Contributors",
-                name: "contributors"
+                message: "Description",
+                name: "description"
             },
             {
                 type: "input",
-                message: "Description",
-                name: "description"
+                message: "Table of Contents",
+                name: "content"
+            },
+            {
+                type: "input",
+                message: "Installation",
+                name: "installation"
             },
             {
                 type: "checkbox",
@@ -40,10 +45,20 @@ function inquireQuestions() {
                 name: "technology"
             },
             {
+                type: "input",
+                message: "Usage",
+                name: "usage"
+            },
+            {
                 type: "list",
                 message: "License",
                 choices: ["MIT", "BSD", "ISC", "Apache", "GPL"],
                 name: "license"
+            },
+            {
+                type: "input",
+                message: "Contributors",
+                name: "contributors"
             },
             {
                 type: "input",
@@ -55,17 +70,65 @@ function inquireQuestions() {
                 message: "What is your portfolio URL?",
                 name: "portfolio"
             },
+            {
+                type: "input",
+                message: "Tests?",
+                name: "tests"
+            },
+            {
+                type: "input",
+                message: "Questions",
+                name: "questions"
+            },
         ])
         .then(function (response) {
-            userName = response.username;
-            const usersInfo = `
+            let userName = response.username;
+            
+            githubAPICall(userName, response);
+        });
+    
+}
+
+inquireQuestions();
+
+function githubAPICall(userName, response) {
+    console.log(userName);
+    const queryUrl = `https://api.github.com/users/` + userName;
+
+    axios
+        .get(queryUrl)
+        .then(function (res) {
+            console.log(res.data);
+
+
+            generateMD(response);
+        }).catch(function (err) {
+
+            console.log(err);
+            
+        });
+
+    //end function
+}
+
+function generateMD(response){
+    const usersInfo = `
           # ${response.project}
     
           ## Description
           ${response.description}
+
+          ## Table of Contents
+          ${response.table}
+
+          ## Installation
+          ${response.installation}
     
           ## Technology Stack
           ${response.technology}
+
+          ## Usage
+          ${response.usage}
     
           ## Contributors
           ${response.contributors}
@@ -78,6 +141,12 @@ function inquireQuestions() {
     
           ## License
           ${response.license}
+
+          ## Tests
+          ${response.tests}
+
+          ## Questions
+          ${response.questions}
         `
             fs.writeFile("README.md", usersInfo, function (err) {
 
@@ -88,29 +157,4 @@ function inquireQuestions() {
                 console.log("Success!");
 
             });
-            githubAPICall();
-        });
-    
-}
-
-inquireQuestions();
-
-function githubAPICall() {
-    console.log(userName);
-    const queryUrl = `https://api.github.com/users/` + userName;
-
-    axios
-        .get(queryUrl)
-        .then(function (res) {
-            console.log(res.data);
-
-
-
-        }).catch(function (err) {
-
-            console.log(err);
-
-        });
-
-    //end function
 }
