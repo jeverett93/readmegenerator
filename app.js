@@ -13,11 +13,6 @@ function inquireQuestions() {
                 message: "GitHub username",
                 name: "username"
             },
-            // {
-            //     type: "password",
-            //     message: "GitHub password",
-            //     name: "password"
-            // },
             {
                 type: "Input",
                 message: "Project Name",
@@ -28,11 +23,11 @@ function inquireQuestions() {
                 message: "Description",
                 name: "description"
             },
-            {
-                type: "input",
-                message: "Table of Contents",
-                name: "content"
-            },
+            // {
+            //     type: "input",
+            //     message: "Table of Contents",
+            //     name: "content"
+            // },
             {
                 type: "input",
                 message: "Installation",
@@ -115,11 +110,18 @@ function generateMD(res, response) {
 
 # ${response.project}
     
-## Description
+## <h2 id="#description">Description</h2>
 ${response.description}
 
-## Table of Contents
-${response.content}
+## Table of Contents   
+<li><a href="#description">Description</a></li>  
+<li><a href="#installation">Installation</a></li> 
+<li><a href="#tech">Technology Stack</a></li> 
+<li><a href="#usage">Usage</a></li>
+<li><a href="#contributors">Contributors</a></li> 
+<li><a href="#contact">Contact</a></li> 
+<li><a href="#license">License</a></li> 
+<li><a href="#tests">Tests</a></li> 
 
 ## Installation
 ${response.installation}
