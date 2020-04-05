@@ -4,7 +4,7 @@
 # Rad Black Dad
     
 ## <h2 id="#description">Description</h2>
-A Father to Y'all Style
+Fathering Y'all Styles
 
 ## Table of Contents   
 <li><a href="#description">Description</a></li>  
@@ -16,27 +16,27 @@ A Father to Y'all Style
 <li><a href="#license">License</a></li> 
 <li><a href="#tests">Tests</a></li> 
 
-## <h2 id="#installation">Installation</h2>
+## <h2 id="installation">Installation</h2>
 
     
-## <h2 id="#tech">Technology Stack</h2>
-Node.Js,JavaScript,GIT,GitHub,HTML,CSS,APIs
+## <h2 id="tech">Technology Stack</h2>
+Node.Js, JavaScript, GIT, GitHub, HTML, CSS, APIs, Command- Line
 
-## <h2 id="#usage">Usage</h2>
-To grow as a person
+## <h2 id="usage">Usage</h2>
+To grow as as person
     
-## <h2 id="#contributors">Contributors</h2>
-jeverett93.github.io
+## <h2 id="contributors">Contributors</h2>
+github.com/jeverett93
     
-## <h2 id="#contact">Contact</h2>
+## <h2 id="contact">Contact</h2>
 * #### Name: Joshua Everett
 * #### Github https://github.com/jeverett93
-* #### Portfolio: josheverett93.github.io
+* #### Portfolio: jeverett93.github.io
 * #### Email: josheverett93@gmail.com
 * #### LinkedIn: linkedin.com/joshua-everett
     
-## <h2 id="#license">License</h2>
+## <h2 id="license">License</h2>
 MIT
 
-## <h2 id="#tests">Tests</h2>
+## <h2 id="tests">Tests</h2>
 

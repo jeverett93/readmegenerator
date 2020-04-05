@@ -36,7 +36,7 @@ function inquireQuestions() {
             {
                 type: "checkbox",
                 message: "Technology Used",
-                choices: ["Node.Js", "Express", "JavaScript", "jQuery", "React.js", "React", "GIT", "GitHub", "MongoDB", "MySQL", "Firebase", "Handlebars", "HTML", "CSS", "Bootstrap", "Media Queries", "APIs", "Microsoft Suite", "Heroku", "Command- Line"],
+                choices: ["Node.Js", " Express", " JavaScript", " jQuery", " React.js", " React", " GIT", " GitHub", " MongoDB", " MySQL", " Firebase", " Handlebars", " HTML", " CSS", " Bootstrap", " Media Queries", " APIs", " Microsoft Suite", " Heroku", " Command- Line"],
                 name: "technology"
             },
             {
@@ -123,29 +123,29 @@ ${response.description}
 <li><a href="#license">License</a></li> 
 <li><a href="#tests">Tests</a></li> 
 
-## <h2 id="#installation">Installation</h2>
+## <h2 id="installation">Installation</h2>
 ${response.installation}
     
-## <h2 id="#tech">Technology Stack</h2>
+## <h2 id="tech">Technology Stack</h2>
 ${response.technology}
 
-## <h2 id="#usage">Usage</h2>
+## <h2 id="usage">Usage</h2>
 ${response.usage}
     
-## <h2 id="#contributors">Contributors</h2>
+## <h2 id="contributors">Contributors</h2>
 ${response.contributors}
     
-## <h2 id="#contact">Contact</h2>
+## <h2 id="contact">Contact</h2>
 * #### Name: ${res.data.name}
 * #### Github ${res.data.html_url}
 * #### Portfolio: ${response.portfolio}
 * #### Email: ${res.data.email}
 * #### LinkedIn: ${response.linkedin}
     
-## <h2 id="#license">License</h2>
+## <h2 id="license">License</h2>
 ${response.license}
 
-## <h2 id="#tests">Tests</h2>
+## <h2 id="tests">Tests</h2>
 ${response.tests}
 `
     fs.writeFile("README.md", usersInfo, function (err) {
