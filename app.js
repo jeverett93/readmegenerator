@@ -123,29 +123,29 @@ ${response.description}
 <li><a href="#license">License</a></li> 
 <li><a href="#tests">Tests</a></li> 
 
-## Installation
+## <h2 id="#installation">Installation</h2>
 ${response.installation}
     
-## Technology Stack
+## <h2 id="#tech">Technology Stack</h2>
 ${response.technology}
 
-## Usage
+## <h2 id="#usage">Usage</h2>
 ${response.usage}
     
-## Contributors
+## <h2 id="#contributors">Contributors</h2>
 ${response.contributors}
     
-## Contact
+## <h2 id="#contact">Contact</h2>
 * #### Name: ${res.data.name}
 * #### Github ${res.data.html_url}
 * #### Portfolio: ${response.portfolio}
 * #### Email: ${res.data.email}
 * #### LinkedIn: ${response.linkedin}
     
-## License
+## <h2 id="#license">License</h2>
 ${response.license}
 
-## Tests
+## <h2 id="#tests">Tests</h2>
 ${response.tests}
 `
     fs.writeFile("README.md", usersInfo, function (err) {
