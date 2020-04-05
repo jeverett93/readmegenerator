@@ -2,7 +2,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const axios = require('axios');
-const datafire = require('datafire');
 require('dotenv').config();
 // let userName = ""
 
@@ -112,41 +111,41 @@ function githubAPICall(userName, response) {
 
 function generateMD(res, response) {
     const usersInfo = `
-    <img src="${res.data.avatar_url}">
-    
-          # ${response.project}
-    
-          ## Description
-          ${response.description}
+<img src="${res.data.avatar_url}" style= "width: 200px; height: 200px">
 
-          ## Table of Contents
-          ${response.content}
+# ${response.project}
+    
+## Description
+${response.description}
 
-          ## Installation
-          ${response.installation}
-    
-          ## Technology Stack
-          ${response.technology}
+## Table of Contents
+${response.content}
 
-          ## Usage
-          ${response.usage}
+## Installation
+${response.installation}
     
-          ## Contributors
-          ${response.contributors}
-    
-          ## Contact
-          * #### Name: ${res.data.name}
-          * #### Github ${res.data.html_url}
-          * #### Portfolio: ${response.portfolio}
-          * #### Email: ${res.data.email}
-          * #### LinkedIn: ${response.linkedin}
-    
-          ## License
-          ${response.license}
+## Technology Stack
+${response.technology}
 
-          ## Tests
-          ${response.tests}
-        `
+## Usage
+${response.usage}
+    
+## Contributors
+${response.contributors}
+    
+## Contact
+* #### Name: ${res.data.name}
+* #### Github ${res.data.html_url}
+* #### Portfolio: ${response.portfolio}
+* #### Email: ${res.data.email}
+* #### LinkedIn: ${response.linkedin}
+    
+## License
+${response.license}
+
+## Tests
+${response.tests}
+`
     fs.writeFile("README.md", usersInfo, function (err) {
 
         if (err) {
