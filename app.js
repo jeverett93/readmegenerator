@@ -23,11 +23,6 @@ function inquireQuestions() {
                 message: "Description",
                 name: "description"
             },
-            // {
-            //     type: "input",
-            //     message: "Table of Contents",
-            //     name: "content"
-            // },
             {
                 type: "input",
                 message: "Installation",
@@ -133,14 +128,14 @@ ${response.technology}
 ${response.usage}
     
 ## <h2 id="contributors">Contributors</h2>
-${response.contributors}
+[${response.contributors}](${response.contributors})
     
 ## <h2 id="contact">Contact</h2>
 * #### Name: ${res.data.name}
 * #### Github ${res.data.html_url}
-* #### Portfolio: ${response.portfolio}
+* #### Portfolio: [${response.portfolio}](${response.portfolio})
 * #### Email: ${res.data.email}
-* #### LinkedIn: ${response.linkedin}
+* #### LinkedIn: [${response.linkedin}](${response.linkedin})
     
 ## <h2 id="license">License</h2>
 ${response.license}
