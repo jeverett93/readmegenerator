@@ -3,7 +3,6 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const axios = require('axios');
 require('dotenv').config();
-// let userName = ""
 
 function inquireQuestions() {
     inquirer
@@ -96,7 +95,6 @@ function githubAPICall(userName, response) {
 
         });
 
-    //end function
 }
 
 function generateMD(res, response) {
@@ -142,7 +140,7 @@ ${response.usage}
 ## <h2 id="tests">Tests</h2>
 ${response.tests}
 `
-    fs.writeFile("README.md", usersInfo, function (err) {
+    fs.writeFile("Gen-README.md", usersInfo, function (err) {
 
         if (err) {
             return console.log(err);

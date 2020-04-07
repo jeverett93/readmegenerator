@@ -1,12 +1,14 @@
 
-<img id="license" src= "https://img.shields.io/badge/License-MIT-blueviolet">
+![License](https://img.shields.io/badge/License-MIT-blueviolet)
 <br style= "line-height: 10px">
-<img src="https://avatars0.githubusercontent.com/u/60204713?v=4" style= "width: 200px; height: 200px">
+![Profile Picture](https://avatars0.githubusercontent.com/u/60204713?v=4)
 
-# Test!
+# Readme Generator
     
-## <h2 id="#description">Description</h2>
-Ain't no stoppin me now! I'm on the move!
+## <h2 id="description">Description</h2>
+This is a command-line application that dynamically generates a README.md from a user's input.
+
+![Image of Application](assets/readme_demo.gif)
 
 ## Table of Contents   
 <li><a href="#license">License</a></li>
@@ -16,26 +18,37 @@ Ain't no stoppin me now! I'm on the move!
 <li><a href="#usage">Usage</a></li>
 <li><a href="#contributors">Contributors</a></li> 
 <li><a href="#contact">Contact</a></li>  
-<li><a href="#tests">Tests</a></li> 
 
-## <h2 id="installation">Installation</h2>
+## Installation
+Step 1. Git clone this link to your terminal: https://github.com/jeverett93/readmegenerator.git
+Step 2. Navigate into the cloned repository.
+Step 3. Install the axios, dotenv, and inquirer dependencies into your command line using the following commands respectively:
 
+    ```
+    npm install axios
+    npm install dotenv
+    npm install inquirer
+    ```
+
+Step 4. Run the application from the command line with following command:
+
+    ```
+    node index.js
+    ```
     
 ## <h2 id="tech">Technology Stack</h2>
 Node.Js, JavaScript, GIT, GitHub, HTML, CSS, APIs, Command- Line
 
 ## <h2 id="usage">Usage</h2>
-Just keep on using me until you use me up.
+To simplify the generation of a readme for a developer.
     
 ## <h2 id="contributors">Contributors</h2>
 [github.com/jeverett93](github.com/jeverett93)
     
 ## <h2 id="contact">Contact</h2>
 * #### Name: Joshua Everett
-* #### Github https://github.com/jeverett93
 * #### Portfolio: [jeverett.github.io](jeverett.github.io)
 * #### Email: josheverett93@gmail.com
 * #### LinkedIn: [https://www.linkedin.com/in/joshua-everett-087a4649/](https://www.linkedin.com/in/joshua-everett-087a4649/)
 
-## <h2 id="tests">Tests</h2>
 
