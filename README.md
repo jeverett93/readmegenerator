@@ -29,7 +29,7 @@ This is a command-line application that dynamically generates a README.md from a
     npm install inquirer
     ```
 
-Step 4. Run the application from the command line with following command:
+* Step 4. Run the application from the command line with following command:
 
     ```
     node index.js
