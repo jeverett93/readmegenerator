@@ -39,7 +39,14 @@ Step 4. Run the application from the command line with following command:
 Node.Js, JavaScript, GIT, GitHub, HTML, CSS, APIs, Command- Line
 
 ## <h2 id="usage">Usage</h2>
-To simplify the generation of a readme for a developer.
+
+```
+AS A developer
+
+I WANT a README generator
+
+SO THAT I can easily put together a good README for a new project
+```
     
 ## <h2 id="contributors">Contributors</h2>
 [github.com/jeverett93](github.com/jeverett93)

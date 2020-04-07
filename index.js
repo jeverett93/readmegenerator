@@ -1,9 +1,10 @@
-
+// global scope
 const fs = require('fs');
 const inquirer = require('inquirer');
 const axios = require('axios');
 require('dotenv').config();
 
+// function that prompts questions for user
 function inquireQuestions() {
     inquirer
         .prompt([
@@ -75,6 +76,7 @@ function inquireQuestions() {
 
 inquireQuestions();
 
+// Function that calls github API. This API gives us the user info from Github incl. photo and email.
 function githubAPICall(userName, response) {
     console.log(userName);
     const queryUrl = `https://api.github.com/users/` + userName;
@@ -97,6 +99,7 @@ function githubAPICall(userName, response) {
 
 }
 
+// function that generates text and format of readme
 function generateMD(res, response) {
     const usersInfo = `
 <img id="license" src= "https://img.shields.io/badge/License-${response.license}-blueviolet">
@@ -140,6 +143,7 @@ ${response.usage}
 ## <h2 id="tests">Tests</h2>
 ${response.tests}
 `
+// Writing markdown to readme file
     fs.writeFile("Gen-README.md", usersInfo, function (err) {
 
         if (err) {
