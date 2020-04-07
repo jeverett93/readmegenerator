@@ -101,7 +101,7 @@ function generateMD(res, response) {
     const usersInfo = `
 <img id="license" src= "https://img.shields.io/badge/License-${response.license}-blueviolet">
 <br style= "line-height: 10px">
-<img src="${res.data.avatar_url}" style= "width: 200px; height: 200px">
+<img src="${res.data.avatar_url}" style= "width: 150px; height: 150px">
 
 # ${response.project}
     
@@ -109,14 +109,14 @@ function generateMD(res, response) {
 ${response.description}
 
 ## Table of Contents   
-<li><a href="#license">License</a></li>
-<li><a href="#description">Description</a></li>  
-<li><a href="#installation">Installation</a></li> 
-<li><a href="#tech">Technology Stack</a></li> 
-<li><a href="#usage">Usage</a></li>
-<li><a href="#contributors">Contributors</a></li> 
-<li><a href="#contact">Contact</a></li>  
-<li><a href="#tests">Tests</a></li> 
+* <a href="#license">License</a>
+* <a href="#description">Description</a>  
+* <a href="#installation">Installation</a>
+* <a href="#tech">Technology Stack</a> 
+* <a href="#usage">Usage</a>
+* <a href="#contributors">Contributors</a>
+* <a href="#contact">Contact</a>
+* <a href="#tests">Tests</a>
 
 ## <h2 id="installation">Installation</h2>
 ${response.installation}

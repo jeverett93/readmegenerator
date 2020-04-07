@@ -1,6 +1,6 @@
 
 ![License](https://img.shields.io/badge/License-MIT-blueviolet)
-<br style= "line-height: 10px">
+
 ![Profile Picture](https://avatars0.githubusercontent.com/u/60204713?v=4)
 
 # Readme Generator
@@ -11,18 +11,17 @@ This is a command-line application that dynamically generates a README.md from a
 ![Image of Application](assets/readme_demo.gif)
 
 ## Table of Contents   
-<li><a href="#license">License</a></li>
-<li><a href="#description">Description</a></li>  
-<li><a href="#installation">Installation</a></li> 
-<li><a href="#tech">Technology Stack</a></li> 
-<li><a href="#usage">Usage</a></li>
-<li><a href="#contributors">Contributors</a></li> 
-<li><a href="#contact">Contact</a></li>  
+* <a href="#description">Description</a> 
+* <a href="#installation">Installation</a> 
+* <a href="#tech">Technology Stack</a>
+* <a href="#usage">Usage</a>
+* <a href="#contributors">Contributors</a> 
+* <a href="#contact">Contact</a>
 
 ## Installation
-Step 1. Git clone this link to your terminal: https://github.com/jeverett93/readmegenerator.git
-Step 2. Navigate into the cloned repository.
-Step 3. Install the axios, dotenv, and inquirer dependencies into your command line using the following commands respectively:
+* Step 1. Git clone this link to your terminal: https://github.com/jeverett93/readmegenerator.git
+* Step 2. Navigate into the cloned repository.
+* Step 3. Install the axios, dotenv, and inquirer dependencies into your command line using the following commands respectively:
 
     ```
     npm install axios
