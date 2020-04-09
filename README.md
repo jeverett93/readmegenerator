@@ -17,6 +17,7 @@ This is a command-line application that dynamically generates a README.md from a
 * <a href="#usage">Usage</a>
 * <a href="#contributors">Contributors</a> 
 * <a href="#contact">Contact</a>
+* <a href="#tests">Tests</a>
 
 ## Installation
 * Step 1. Git clone this link to your terminal: https://github.com/jeverett93/readmegenerator.git
@@ -56,5 +57,12 @@ SO THAT I can easily put together a good README for a new project
 * #### Portfolio: [jeverett.github.io](jeverett.github.io)
 * #### Email: josheverett93@gmail.com
 * #### LinkedIn: [https://www.linkedin.com/in/joshua-everett-087a4649/](https://www.linkedin.com/in/joshua-everett-087a4649/)
+
+## <h2 id="tests">Tests</h2>
+To run tests run:
+
+```
+npm run test
+```
 
 
