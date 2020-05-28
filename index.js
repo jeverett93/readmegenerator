@@ -1,76 +1,76 @@
 // global scope
-const fs = require('fs');
-const inquirer = require('inquirer');
-const axios = require('axios');
-require('dotenv').config();
+const fs = require("fs");
+const inquirer = require("inquirer");
+const axios = require("axios");
+require("dotenv").config();
 
 // function that prompts questions for user
 function inquireQuestions() {
-    inquirer
-        .prompt([
-            {
-                type: "input",
-                message: "GitHub username",
-                name: "username"
-            },
-            {
-                type: "Input",
-                message: "Project Name",
-                name: "project"
-            },
-            {
-                type: "input",
-                message: "Description",
-                name: "description"
-            },
-            {
-                type: "input",
-                message: "Installation",
-                name: "installation"
-            },
-            {
-                type: "checkbox",
-                message: "Technology Used",
-                choices: ["Node.Js", " Express", " JavaScript", " jQuery", " React.js", " React", " GIT", " GitHub", " MongoDB", " MySQL", " Firebase", " Handlebars", " HTML", " CSS", " Bootstrap", " Media Queries", " APIs", " Microsoft Suite", " Heroku", " Command- Line"],
-                name: "technology"
-            },
-            {
-                type: "input",
-                message: "Usage",
-                name: "usage"
-            },
-            {
-                type: "list",
-                message: "License",
-                choices: ["MIT", "BSD", "ISC", "Apache", "GPL"],
-                name: "license"
-            },
-            {
-                type: "input",
-                message: "Contributors",
-                name: "contributors"
-            },
-            {
-                type: "input",
-                message: "What is your LinkedIn URL?",
-                name: "linkedin"
-            },
-            {
-                type: "input",
-                message: "What is your portfolio URL?",
-                name: "portfolio"
-            },
-            {
-                type: "input",
-                message: "Tests?",
-                name: "tests"
-            },
-        ])
-        .then(function (response) {
-            let userName = response.username;
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        message: "GitHub username",
+        name: "username"
+      },
+      {
+        type: "Input",
+        message: "Project Name",
+        name: "project"
+      },
+      {
+        type: "input",
+        message: "Description",
+        name: "description"
+      },
+      {
+        type: "input",
+        message: "Installation",
+        name: "installation"
+      },
+      {
+        type: "checkbox",
+        message: "Technology Used",
+        choices: ["Node.Js", " Express", " JavaScript", " jQuery", " React.js", " React", " GIT", " GitHub", " MongoDB", " MySQL", " Firebase", " Handlebars", " HTML", " CSS", " Bootstrap", " Media Queries", " APIs", " Microsoft Suite", " Heroku", " Command- Line"],
+        name: "technology"
+      },
+      {
+        type: "input",
+        message: "Usage",
+        name: "usage"
+      },
+      {
+        type: "list",
+        message: "License",
+        choices: ["MIT", "BSD", "ISC", "Apache", "GPL"],
+        name: "license"
+      },
+      {
+        type: "input",
+        message: "Contributors",
+        name: "contributors"
+      },
+      {
+        type: "input",
+        message: "What is your LinkedIn URL?",
+        name: "linkedin"
+      },
+      {
+        type: "input",
+        message: "What is your portfolio URL?",
+        name: "portfolio"
+      },
+      {
+        type: "input",
+        message: "Tests?",
+        name: "tests"
+      },
+    ])
+    .then(function (response) {
+      let userName = response.username;
 
-            githubAPICall(userName, response);
-        });
+      githubAPICall(userName, response);
+    });
 
 }
 
@@ -78,30 +78,30 @@ inquireQuestions();
 
 // Function that calls github API. This API gives us the user info from Github incl. photo and email.
 function githubAPICall(userName, response) {
-    console.log(userName);
-    const queryUrl = `https://api.github.com/users/` + userName;
+  console.log(userName);
+  const queryUrl = "https://api.github.com/users/" + userName;
 
-    axios
-        .get(queryUrl,
-            {
-                headers: { "Authorization": `token ${process.env.GH_TOKEN}` }
-            })
-        .then(function (res) {
-            console.log(res.data);
+  axios
+    .get(queryUrl,
+      {
+        headers: { "Authorization": `token ${process.env.GH_TOKEN}` }
+      })
+    .then(function (res) {
+      console.log(res.data);
 
 
-            generateMD(res, response);
-        }).catch(function (err) {
+      generateMD(res, response);
+    }).catch(function (err) {
 
-            console.log(err);
+      console.log(err);
 
-        });
+    });
 
 }
 
 // function that generates text and format of readme
 function generateMD(res, response) {
-    const usersInfo = `
+  const usersInfo = `
 <img id="license" src= "https://img.shields.io/badge/License-${response.license}-blueviolet">
 <br style= "line-height: 10px">
 <img src="${res.data.avatar_url}" style= "width: 150px; height: 150px">
@@ -142,15 +142,15 @@ ${response.usage}
 
 ## <h2 id="tests">Tests</h2>
 ${response.tests}
-`
-// Writing markdown to readme file
-    fs.writeFile("Gen-README.md", usersInfo, function (err) {
+`;
+  // Writing markdown to readme file
+  fs.writeFile("Gen-README.md", usersInfo, function (err) {
 
-        if (err) {
-            return console.log(err);
-        }
+    if (err) {
+      return console.log(err);
+    }
 
-        console.log("Success!");
+    console.log("Success!");
 
-    });
+  });
 }
